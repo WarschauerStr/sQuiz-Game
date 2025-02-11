@@ -1,4 +1,3 @@
-import psycopg2
 from db import execute_query
 
 

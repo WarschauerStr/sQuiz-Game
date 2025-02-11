@@ -34,6 +34,26 @@ Example:
 "quiz_id"   "theme" "question"  "answer"	"option_A"	"option_B"	"option_C"	"option_D"	"points_value"
 1	"Nature"	"What is the largest mammal on Earth?"	"A"	"Blue Whale"	"Elephant"	"Giraffe"	"Shark"	10
 
+4. Main menu structure:
+
+First page:
+1. Register
+2. Login
+3. Exit
+
+Second page:
+1. If the user chose registration, execute registration procedure, then ask him
+if he would like to login
+2. If the user chose login, execute login procedure
+3. Exit
+
+Third page:
+After user successfully logged in:
+1. Option to display available quizes and chose one if he agree,
+if not return
+2. Display leaderboard
+3. Option to create own quiz
+4. Exit
 
 
 ADD LATER:
@@ -49,6 +69,7 @@ be able to recieve points for the same quiz twice next time.
 the previous one and compare with the current one and add the difference to the score table points column. Make sure 
 that we don't have to decriese points value.)
 
-3. Create personal cabinet
+3. Create personal cabinet.
+Let user display his points.
 
-4. Add trophy system for the points.
+4. Add leaderboard
