@@ -24,6 +24,21 @@ Welcome to **sQuiz Game**! This is a fun and interactive quiz game built using P
 ### 5. **Score Update**
 - After completing a quiz, users' scores are updated and stored in the database, allowing them to track their progress over time.
 
+### 6. **Explanation of Techniques**
+Explanation of Techniques
+1. UUID for User Identification
+A unique UUID is generated for each user during registration. This ensures that users are identified uniquely across the system.
+2. Password Security
+The password validation ensures that passwords meet certain security standards, such as a minimum length and the inclusion of at least one uppercase letter and one number. This is important for preventing weak passwords.
+3. Dynamic Quiz Tables
+The quiz tables are created dynamically for each theme (e.g., quiz_nature, quiz_science). This approach allows for easy addition of new themes and quizzes without altering the database schema.
+4. Random Question Selection
+To ensure the game remains fun and challenging, quiz questions are selected randomly from the database for each quiz attempt.
+5. Leaderboard
+The leaderboard displays the top users based on their accumulated scores, allowing players to see how they rank against others.
+6. Database Interaction
+The psycopg2 library is used to interact with the PostgreSQL database, execute queries, and fetch results. It provides a simple interface for working with PostgreSQL from Python.
+
 ## Technologies Used
 
 ### 1. **Python**
@@ -53,18 +68,3 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
-
-Explanation of Techniques
-1. UUID for User Identification
-A unique UUID is generated for each user during registration. This ensures that users are identified uniquely across the system.
-2. Password Security
-The password validation ensures that passwords meet certain security standards, such as a minimum length and the inclusion of at least one uppercase letter and one number. This is important for preventing weak passwords.
-3. Dynamic Quiz Tables
-The quiz tables are created dynamically for each theme (e.g., quiz_nature, quiz_science). This approach allows for easy addition of new themes and quizzes without altering the database schema.
-4. Random Question Selection
-To ensure the game remains fun and challenging, quiz questions are selected randomly from the database for each quiz attempt.
-5. Leaderboard
-The leaderboard displays the top users based on their accumulated scores, allowing players to see how they rank against others.
-6. Database Interaction
-The psycopg2 library is used to interact with the PostgreSQL database, execute queries, and fetch results. It provides a simple interface for working with PostgreSQL from Python.
