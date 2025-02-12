@@ -3,37 +3,20 @@ from db import execute_query
 from validators import validate_fullname, validate_email, validate_password
 
 
-def register_user():
-    print("Register a new user:")
-
-    # Validate fullname
-    while True:
-        fullname = input("Enter fullname (First Last): ").strip()
-        if validate_fullname(fullname):
-            break
+def register_user(fullname, email, password, username):
+    """Register a new user with provided details."""
+    if not validate_fullname(fullname):
         print("⚠ Invalid fullname format. Please use 'First Last'.")
-
-    # Validate email
-    while True:
-        email = input("Enter email: ").strip()
-        if validate_email(email):
-            break
+        return
+    
+    if not validate_email(email):
         print("⚠ Invalid email format. Please enter a valid email (e.g., user@example.com).")
+        return
 
-    # Validate password
-    while True:
-        password = input("Enter password (min 8 chars, 1 uppercase, 1 number): ").strip()
-        if validate_password(password):
-            break
+    if not validate_password(password):
         print("⚠ Invalid password. It must be at least 8 characters long, contain at least one uppercase letter and one number.")
-
-    # Get username (no strict validation, but ensure it's not empty)
-    while True:
-        username = input("Enter username: ").strip()
-        if username:
-            break
-        print("⚠ Username cannot be empty.")
-
+        return
+    
     user_uuid = str(uuid.uuid4())
 
     insert_query = """
@@ -44,10 +27,8 @@ def register_user():
     print("✅ Registration successful!")
 
 
-def login_user():
-    username = input("Enter your username: ").strip()
-    password = input("Enter your password: ").strip()
-
+def login_user(username, password):
+    """Login user and return user details if successful."""
     select_query = """
     SELECT * FROM users
     WHERE username = %s AND password = crypt(%s, password);
@@ -55,10 +36,8 @@ def login_user():
     user = execute_query(select_query, (username, password), fetch=True)
 
     if user:
-        print(f"Welcome, {user[0][2]}!")  # Display fullname
         return user[0]  # Return user details as a tuple
     else:
-        print("Invalid username or password.")
         return None
 
 

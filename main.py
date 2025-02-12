@@ -1,5 +1,5 @@
-from user import register_user, login_user, update_user_score
-from quiz import get_available_themes, get_quiz_questions
+from user import register_user, login_user
+from quiz import start_quiz_menu
 from leaderboard import get_top_users
 from quiz_creation import create_quiz
 
@@ -20,37 +20,6 @@ def show_user_options():
     print("2️⃣ View Leaderboard")
     print("3️⃣ Create a Quiz")
     print("4️⃣ Log Out")
-
-
-def start_quiz_menu(user_id):
-    themes = get_available_themes()
-    if themes:
-        print("\n\U0001F4DA Available themes:")
-        for theme in themes:
-            print(f"\u2705 {theme.capitalize()}")
-        theme = input("\n\U0001F3AD Choose a theme: ").strip().lower()
-        if theme in themes:
-            difficulty = input("Choose difficulty level (1-Easy, 2-Medium, 3-Hard): ").strip()
-            questions = get_quiz_questions(theme, difficulty)
-            if questions:
-                score = 0
-                for idx, (quiz_id, question, answer, option_A, option_B, option_C, option_D, points) in enumerate(questions, 1):
-                    print(f"\nQuestion {idx}: {question}")
-                    print(f"A. {option_A}\nB. {option_B}\nC. {option_C}\nD. {option_D}")
-                    user_answer = input("Your answer (A, B, C, D): ").strip().upper()
-                    if user_answer == answer:
-                        print("Correct!\n")
-                        score += points
-                    else:
-                        print(f"Wrong! The correct answer was {answer}.\n")
-                print(f"You finished the quiz with {score} points!")
-                update_user_score(user_id, score)  # Update score after quiz
-            else:
-                print("No questions available for this theme and difficulty.")
-        else:
-            print("Invalid theme. Please try again.")
-    else:
-        print("No themes available.")
 
 
 def main():
