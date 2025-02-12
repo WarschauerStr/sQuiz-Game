@@ -16,6 +16,9 @@ CREATE TABLE users (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- 1.2.1 Add extension for the password heshing
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 -- 1.3 Create 'score' table
 CREATE TABLE score (
     score_id SERIAL PRIMARY KEY,   -- Primary key for score table

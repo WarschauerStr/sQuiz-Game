@@ -38,7 +38,7 @@ def register_user():
 
     insert_query = """
     INSERT INTO users (uuid, fullname, email, password, username)
-    VALUES (%s, %s, %s, %s, %s);
+    VALUES (%s, %s, %s, crypt(%s, gen_salt('md5')), %s);
     """
     execute_query(insert_query, (user_uuid, fullname, email, password, username))
     print("✅ Registration successful!")
@@ -48,7 +48,10 @@ def login_user():
     username = input("Enter your username: ").strip()
     password = input("Enter your password: ").strip()
 
-    select_query = "SELECT * FROM users WHERE username = %s AND password = %s;"
+    select_query = """
+    SELECT * FROM users
+    WHERE username = %s AND password = crypt(%s, password);
+    """
     user = execute_query(select_query, (username, password), fetch=True)
 
     if user:

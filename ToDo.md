@@ -73,3 +73,5 @@ that we don't have to decriese points value.)
 Let user display his points.
 
 4. Add leaderboard
+
+5. BEGIN; and COMMIT;
