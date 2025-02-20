@@ -1,82 +1,41 @@
-from user import register_user, login_user
-from quiz import start_quiz_menu
-from leaderboard import get_top_users
-from quiz_creation import create_quiz
+import sys
+from PySide2.QtWidgets import QApplication, QStackedWidget
+from windows.login_register_window import LoginRegisterWindow
+from windows.register_window import RegisterWindow
+from windows.logged_options_window import LoggedOptionsWindow
+from windows.game_window import GameWindow
 
+class MainApp:
+    def __init__(self):
+        self.app = QApplication(sys.argv)
+        self.stacked_widget = QStackedWidget()
+        self.current_user_id = None  # Store user_id after login
 
-def show_main_menu():
-    print("=" * 40)
-    print("\U0001F389 Welcome to the sQuiz Game! \U0001F389".center(40))
-    print("=" * 40)
-    print("\n\U0001F3C1 Main Menu:")
-    print("1️⃣ Register")
-    print("2️⃣ Login")
-    print("3️⃣ Exit")
+        # Initialize windows with the correct arguments
+        self.login_register_window = LoginRegisterWindow(self.stacked_widget, self)
+        self.register_window = RegisterWindow(self.stacked_widget)
+        self.logged_options_window = LoggedOptionsWindow(self.stacked_widget, self)  # Corrected
 
+        # Add windows to stacked widget
+        self.stacked_widget.addWidget(self.login_register_window.ui)  # Index 0
+        self.stacked_widget.addWidget(self.register_window.ui)  # Index 1
+        self.stacked_widget.addWidget(self.logged_options_window.ui)  # Index 2
 
-def show_user_options():
-    print("\n\U0001F3AF Welcome back!")
-    print("1️⃣ Start Quiz")
-    print("2️⃣ View Leaderboard")
-    print("3️⃣ Create a Quiz")
-    print("4️⃣ Log Out")
+        # Set initial window
+        self.stacked_widget.setCurrentIndex(0)
+        self.stacked_widget.setWindowTitle("sQuiz Game")
+        self.stacked_widget.show()
+        sys.exit(self.app.exec_())
 
+    def start_game(self, theme):
+        """Start the game with the selected quiz theme and pass the correct user_id."""
+        if self.current_user_id is None:
+            print("Error: User is not logged in.")
+            return
 
-def main():
-    while True:
-        show_main_menu()
-        action = input("\n\U0001F449 Choose an option (1-3): ").strip()
-
-        if action == "1":  # Register
-            register_user()
-            if input("Would you like to login now? (yes/no): ").strip().lower() == "yes":
-                user = login_user()
-                if user:
-                    user_id = user[0]
-                    print("\n\U0001F3AF Login successful!")
-                    while True:
-                        show_user_options()
-                        option = input("\nChoose an option (1-4): ").strip()
-                        if option == "1":
-                            start_quiz_menu(user_id)
-                        elif option == "2":
-                            get_top_users()
-                        elif option == "3":
-                            create_quiz()
-                        elif option == "4":
-                            print("\n\U0001F44B Goodbye! See you next time!")
-                            break
-                        else:
-                            print("⚠ Invalid choice. Please choose between 1-4.")
-                else:
-                    print("\nLogin failed!")
-        elif action == "2":  # Login
-            user = login_user()
-            if user:
-                user_id = user[0]
-                print("\n\U0001F3AF Login successful!")
-                while True:
-                    show_user_options()
-                    option = input("\nChoose an option (1-4): ").strip()
-                    if option == "1":
-                        start_quiz_menu(user_id)
-                    elif option == "2":
-                        get_top_users()
-                    elif option == "3":
-                        create_quiz()
-                    elif option == "4":
-                        print("\n\U0001F44B Goodbye! See you next time!")
-                        break
-                    else:
-                        print("⚠ Invalid choice. Please choose between 1-4.")
-            else:
-                print("Invalid username or password.")
-        elif action == "3":  # Exit
-            print("\n\U0001F44B Goodbye! See you next time!")
-            break
-        else:
-            print("⚠ Invalid choice. Please choose between 1-3.")
-
+        self.game_window = GameWindow(self.stacked_widget, theme, self.current_user_id)
+        self.stacked_widget.addWidget(self.game_window.ui)  # Index 3
+        self.stacked_widget.setCurrentIndex(3)  # Move to game_window
 
 if __name__ == "__main__":
-    main()
+    main_app = MainApp()

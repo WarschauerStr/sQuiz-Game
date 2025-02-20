@@ -75,3 +75,18 @@ Let user display his points.
 4. Add leaderboard
 
 5. BEGIN; and COMMIT;
+
+6. There is order that I need. main.py file that will have this order.
+
+1. login_register_window
+1.1 display login_register_window, if user press "Don't have an account? Register" button move him to register_window.
+1.2 display login_register_window, if user press "Login" button and entered valid info move him to logged_options_window.
+
+2. register_window
+2.1 display register_window, if user press "Register" button after succesfuly registration move him to login_register_window
+2.2 display register_window, if user press "Already have an account? Login" button move him to login_register_window
+
+3. logged_options_window
+3.1 display logged_options_window, if user press "Start Quiz" button move him to game_window
+3.2 display logged_options_window, if user press "Log out" button move him to login_register_window
+3.3 ignore view leaderboard and Create quiz buttons
