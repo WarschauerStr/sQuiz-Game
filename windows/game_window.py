@@ -3,6 +3,7 @@ from PySide2.QtUiTools import QUiLoader
 from quiz import get_quiz_questions
 from user import update_user_score
 
+
 class GameWindow(QWidget):
     def __init__(self, stacked_widget, theme, user_id):
         super().__init__()

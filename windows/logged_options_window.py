@@ -1,7 +1,10 @@
 from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from windows.game_window import GameWindow
+from windows.create_quiz_window import CreateQuizWindow  # Import the create quiz window
+from windows.leaderboard_window import LeaderboardWindow  # Import leaderboard window
 from quiz import get_available_themes  # Import function to fetch themes
+
 
 class LoggedOptionsWindow(QWidget):
     def __init__(self, stacked_widget, main_app):
@@ -16,6 +19,8 @@ class LoggedOptionsWindow(QWidget):
 
         # Connect buttons
         self.ui.start_quiz_button.clicked.connect(self.start_selected_quiz)
+        self.ui.create_quiz_button.clicked.connect(self.open_create_quiz_window)  # Connect create quiz button
+        self.ui.view_leaderboard_button.clicked.connect(self.open_leaderboard_window)  # Connect leaderboard button
         self.ui.log_out_button.clicked.connect(self.go_to_login)
 
     def populate_quiz_selection(self):
@@ -51,24 +56,22 @@ class LoggedOptionsWindow(QWidget):
         self.stacked_widget.addWidget(game_window.ui)
         self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(game_window.ui))  # Move to game window
 
+    def open_create_quiz_window(self):
+        """Open the create quiz window."""
+        create_quiz_window = CreateQuizWindow(self.stacked_widget)
+        self.stacked_widget.addWidget(create_quiz_window.ui)
+        self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(create_quiz_window.ui))  # Move to create quiz window
 
-    # def start_selected_quiz(self):
-    #     """Start a quiz with the selected theme and correct user_id."""
-    #     selected_theme = self.ui.select_quiz_comboBox.currentText()
-    #     if not selected_theme or selected_theme == "No quizzes available":
-    #         QMessageBox.warning(self, "Warning", "Please select a valid quiz theme!")
-    #         return
+    def open_leaderboard_window(self):
+        """Open the leaderboard window."""
+        leaderboard_window = LeaderboardWindow(self.stacked_widget)
 
-    #     # Get the logged-in user ID
-    #     user_id = self.main_app.current_user_id
-    #     if user_id is None:
-    #         QMessageBox.critical(self, "Error", "No logged-in user found.")
-    #         return
-
-    #     # Create GameWindow with user_id and selected theme
-    #     game_window = GameWindow(self.stacked_widget, selected_theme, user_id)
-    #     self.stacked_widget.addWidget(game_window.ui)
-    #     self.stacked_widget.setCurrentIndex(3)  # Move to game_window
+        self.stacked_widget.addWidget(leaderboard_window.ui)  # Add to stacked widget
+        self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(leaderboard_window.ui))  # Switch to leaderboard
 
     def go_to_login(self):
         self.stacked_widget.setCurrentIndex(0)  # Move back to login_register_window
+
+    def open_leaderboard(self):
+        """Open the leaderboard window."""
+        self.stacked_widget.setCurrentIndex(3)  # ✅ Switch to LeaderboardWindow

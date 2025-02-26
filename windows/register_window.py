@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from user import register_user
 
+
 class RegisterWindow(QWidget):
     def __init__(self, stacked_widget):
         super().__init__()

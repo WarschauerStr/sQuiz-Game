@@ -2,7 +2,7 @@ from db import get_db_connection
 
 
 def get_top_users():
-    """fetch and display top 3 users with the highest scores"""
+    """Fetch the top 3 users with the highest scores."""
     try:
         connection = get_db_connection()
         cursor = connection.cursor()
@@ -17,16 +17,11 @@ def get_top_users():
         cursor.execute(query)
         top_users = cursor.fetchall()
 
-        if not top_users:
-            print("\n🏆 No scores available yet.")
-            return
-
-        print("\n🏆 Top 3 Players 🏆")
-        for idx, (username, points) in enumerate(top_users, 1):
-            print(f"{idx}. {username} - {points} points")
+        return top_users  # Returns list of tuples (username, points)
 
     except Exception as error:
-        print(f"error: {error}")
+        print(f"Error fetching leaderboard: {error}")
+        return []  # Return empty list if error occurs
     finally:
         if connection:
             cursor.close()
