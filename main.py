@@ -11,31 +11,6 @@ from windows.leaderboard_window import LeaderboardWindow
 QApplication.setAttribute(Qt.AA_ShareOpenGLContexts)
 
 
-# class MainApp:
-    # def __init__(self):
-    #     self.app = QApplication(sys.argv)
-    #     self.stacked_widget = QStackedWidget()
-    #     self.current_user_id = None  # Store user_id after login
-
-    #     # Initialize windows
-    #     self.login_register_window = LoginRegisterWindow(self.stacked_widget, self)
-    #     self.register_window = RegisterWindow(self.stacked_widget)
-    #     self.logged_options_window = LoggedOptionsWindow(self.stacked_widget, self)
-
-    #     # Add windows to stacked widget
-    #     self.stacked_widget.addWidget(self.login_register_window.ui)  # Index 0
-    #     self.stacked_widget.addWidget(self.register_window.ui)  # Index 1
-    #     self.stacked_widget.addWidget(self.logged_options_window.ui)  # Index 2
-
-    #     # Adjust window size dynamically
-    #     self.adjust_window_size()
-
-    #     # Set initial window
-    #     self.stacked_widget.setCurrentIndex(0)
-    #     self.stacked_widget.setWindowTitle("sQuiz Game")
-    #     self.stacked_widget.show()
-    #     sys.exit(self.app.exec_())
-
 class MainApp:
     def __init__(self):
         self.app = QApplication(sys.argv)
@@ -46,17 +21,13 @@ class MainApp:
         self.login_register_window = LoginRegisterWindow(self.stacked_widget, self)
         self.register_window = RegisterWindow(self.stacked_widget)
         self.logged_options_window = LoggedOptionsWindow(self.stacked_widget, self)
-        self.leaderboard_window = LeaderboardWindow(self.stacked_widget)
+        self.leaderboard_window = LeaderboardWindow(self.stacked_widget)  # ✅ Add LeaderboardWindow
 
         # Add windows to stacked widget
-        self.stacked_widget.addWidget(self.login_register_window.ui)
-        # Index 0
-        self.stacked_widget.addWidget(self.register_window.ui)
-        # Index 1
-        self.stacked_widget.addWidget(self.logged_options_window.ui)
-        # Index 2
-        self.stacked_widget.addWidget(self.leaderboard_window.ui)
-        # Index 3 
+        self.stacked_widget.addWidget(self.login_register_window.ui)  # Index 0
+        self.stacked_widget.addWidget(self.register_window.ui)  # Index 1
+        self.stacked_widget.addWidget(self.logged_options_window.ui)  # Index 2
+        self.stacked_widget.addWidget(self.leaderboard_window.ui)  # Index 3 ✅ Ensure it's added
 
         # Adjust window size dynamically
         self.adjust_window_size()

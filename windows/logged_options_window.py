@@ -2,7 +2,6 @@ from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from windows.game_window import GameWindow
 from windows.create_quiz_window import CreateQuizWindow  # Import the create quiz window
-from windows.leaderboard_window import LeaderboardWindow  # Import leaderboard window
 from quiz import get_available_themes  # Import function to fetch themes
 
 
@@ -20,7 +19,7 @@ class LoggedOptionsWindow(QWidget):
         # Connect buttons
         self.ui.start_quiz_button.clicked.connect(self.start_selected_quiz)
         self.ui.create_quiz_button.clicked.connect(self.open_create_quiz_window)  # Connect create quiz button
-        self.ui.view_leaderboard_button.clicked.connect(self.open_leaderboard_window)  # Connect leaderboard button
+        self.ui.view_leaderboard_button.clicked.connect(self.open_leaderboard)  # Connect leaderboard button
         self.ui.log_out_button.clicked.connect(self.go_to_login)
 
     def populate_quiz_selection(self):
@@ -62,16 +61,10 @@ class LoggedOptionsWindow(QWidget):
         self.stacked_widget.addWidget(create_quiz_window.ui)
         self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(create_quiz_window.ui))  # Move to create quiz window
 
-    def open_leaderboard_window(self):
-        """Open the leaderboard window."""
-        leaderboard_window = LeaderboardWindow(self.stacked_widget)
-
-        self.stacked_widget.addWidget(leaderboard_window.ui)  # Add to stacked widget
-        self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(leaderboard_window.ui))  # Switch to leaderboard
+    def open_leaderboard(self):
+        """Switch to the leaderboard window."""
+        self.stacked_widget.setCurrentIndex(3)  # ✅ Switch directly to LeaderboardWindow
 
     def go_to_login(self):
+        """Return to the login screen."""
         self.stacked_widget.setCurrentIndex(0)  # Move back to login_register_window
-
-    def open_leaderboard(self):
-        """Open the leaderboard window."""
-        self.stacked_widget.setCurrentIndex(3)  # ✅ Switch to LeaderboardWindow
