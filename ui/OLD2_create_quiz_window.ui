@@ -270,9 +270,9 @@ border-radius: 10px;
    <widget class="QPushButton" name="confirm_button">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>38</x>
       <y>420</y>
-      <width>271</width>
+      <width>561</width>
       <height>25</height>
      </rect>
     </property>
@@ -354,22 +354,6 @@ border-radius: 10px;
     </property>
     <property name="placeholderText">
      <string>Points</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="back_to_main_button">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>420</y>
-      <width>271</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 97, 81);</string>
-    </property>
-    <property name="text">
-     <string>Back to main menu</string>
     </property>
    </widget>
   </widget>

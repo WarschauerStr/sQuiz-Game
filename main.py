@@ -6,6 +6,8 @@ from windows.register_window import RegisterWindow
 from windows.logged_options_window import LoggedOptionsWindow
 from windows.game_window import GameWindow
 from windows.leaderboard_window import LeaderboardWindow
+from windows.create_quiz_window import CreateQuizWindow
+
 
 # Ensure OpenGL context is set correctly before QApplication starts
 QApplication.setAttribute(Qt.AA_ShareOpenGLContexts)
@@ -21,13 +23,18 @@ class MainApp:
         self.login_register_window = LoginRegisterWindow(self.stacked_widget, self)
         self.register_window = RegisterWindow(self.stacked_widget)
         self.logged_options_window = LoggedOptionsWindow(self.stacked_widget, self)
-        self.leaderboard_window = LeaderboardWindow(self.stacked_widget)  # ✅ Add LeaderboardWindow
+        self.leaderboard_window = LeaderboardWindow(self.stacked_widget)
+        self.create_quiz_window = CreateQuizWindow(self.stacked_widget)  # ✅ Add CreateQuizWindow
 
         # Add windows to stacked widget
         self.stacked_widget.addWidget(self.login_register_window.ui)  # Index 0
         self.stacked_widget.addWidget(self.register_window.ui)  # Index 1
         self.stacked_widget.addWidget(self.logged_options_window.ui)  # Index 2
-        self.stacked_widget.addWidget(self.leaderboard_window.ui)  # Index 3 ✅ Ensure it's added
+        self.stacked_widget.addWidget(self.leaderboard_window.ui)  # Index 3
+        self.stacked_widget.addWidget(self.create_quiz_window.ui)  # ✅ Index 4 for CreateQuizWindow
+
+        # Debugging: Print window indexes
+        self.print_window_indexes()
 
         # Adjust window size dynamically
         self.adjust_window_size()
@@ -37,6 +44,13 @@ class MainApp:
         self.stacked_widget.setWindowTitle("sQuiz Game")
         self.stacked_widget.show()
         sys.exit(self.app.exec_())
+
+    def print_window_indexes(self):
+        print(f"LoginRegisterWindow index: {self.stacked_widget.indexOf(self.login_register_window.ui)}")
+        print(f"RegisterWindow index: {self.stacked_widget.indexOf(self.register_window.ui)}")
+        print(f"LoggedOptionsWindow index: {self.stacked_widget.indexOf(self.logged_options_window.ui)}")
+        print(f"LeaderboardWindow index: {self.stacked_widget.indexOf(self.leaderboard_window.ui)}")
+        print(f"CreateQuizWindow index: {self.stacked_widget.indexOf(self.create_quiz_window.ui)}")  # ✅ Ensure it's added
 
     def adjust_window_size(self):
         """Automatically adjust the window size based on screen resolution."""

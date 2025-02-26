@@ -56,10 +56,8 @@ class LoggedOptionsWindow(QWidget):
         self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(game_window.ui))  # Move to game window
 
     def open_create_quiz_window(self):
-        """Open the create quiz window."""
-        create_quiz_window = CreateQuizWindow(self.stacked_widget)
-        self.stacked_widget.addWidget(create_quiz_window.ui)
-        self.stacked_widget.setCurrentIndex(self.stacked_widget.indexOf(create_quiz_window.ui))  # Move to create quiz window
+        """Switch to the Create Quiz window."""
+        self.stacked_widget.setCurrentIndex(4)  # ✅ Switch directly to CreateQuizWindow
 
     def open_leaderboard(self):
         """Switch to the leaderboard window."""
