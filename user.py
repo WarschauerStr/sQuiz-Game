@@ -8,7 +8,7 @@ def register_user(fullname, email, password, username):
     if not validate_fullname(fullname):
         print("⚠ Invalid fullname format. Please use 'First Last'.")
         return
-    
+
     if not validate_email(email):
         print("⚠ Invalid email format. Please enter a valid email (e.g., user@example.com).")
         return
@@ -16,7 +16,7 @@ def register_user(fullname, email, password, username):
     if not validate_password(password):
         print("⚠ Invalid password. It must be at least 8 characters long, contain at least one uppercase letter and one number.")
         return
-    
+
     user_uuid = str(uuid.uuid4())
 
     insert_query = """

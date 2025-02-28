@@ -3,13 +3,13 @@ from PySide2.QtUiTools import QUiLoader
 from quiz import get_quiz_questions
 from user import update_user_score
 
-
 class GameWindow(QWidget):
-    def __init__(self, stacked_widget, theme, user_id):
+    def __init__(self, stacked_widget, theme, difficulty, user_id):
         super().__init__()
         self.stacked_widget = stacked_widget
         self.theme = theme
-        self.user_id = user_id  # Store the correct user_id
+        self.difficulty = difficulty  # Store the selected difficulty
+        self.user_id = user_id        # Store the correct user_id
         self.current_question_index = 0
         self.score = 0
 
@@ -25,8 +25,8 @@ class GameWindow(QWidget):
         self.ui.D_button.clicked.connect(lambda: self.check_answer("D"))
 
     def load_questions(self):
-        """Load questions from the database for the selected theme."""
-        self.questions = get_quiz_questions(self.theme, difficulty=1)
+        """Load questions from the database for the selected theme and difficulty."""
+        self.questions = get_quiz_questions(self.theme, difficulty=self.difficulty)
         if not self.questions:
             QMessageBox.warning(self, "Error", "No questions found for this theme.")
             self.stacked_widget.setCurrentIndex(2)  # Return to logged_options_window

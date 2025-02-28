@@ -88,10 +88,38 @@ border-radius: 10px;
      <string>Enter quiz theme:</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="choose_difficulty_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>110</y>
+      <width>86</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(98, 160, 234);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3</string>
+     </property>
+    </item>
+   </widget>
    <widget class="QLabel" name="choose_difficulty_label">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>260</x>
       <y>80</y>
       <width>141</width>
       <height>21</height>
@@ -187,6 +215,39 @@ border-radius: 10px;
      <string>Answer D</string>
     </property>
    </widget>
+   <widget class="QComboBox" name="choose_correct_answer_comboBox">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>290</y>
+      <width>86</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(98, 160, 234);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>A</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>B</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>C</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D</string>
+     </property>
+    </item>
+   </widget>
    <widget class="QLabel" name="choose_correct_answer_label">
     <property name="geometry">
      <rect>
@@ -263,7 +324,7 @@ border-radius: 10px;
    <widget class="QLabel" name="ammount_of_points_label">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>440</x>
       <y>80</y>
       <width>161</width>
       <height>21</height>
@@ -282,7 +343,7 @@ border-radius: 10px;
    <widget class="QLineEdit" name="points_lineEdit">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>480</x>
       <y>110</y>
       <width>71</width>
       <height>41</height>
@@ -309,38 +370,6 @@ border-radius: 10px;
     </property>
     <property name="text">
      <string>Back to main menu</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="choose_difficulty_lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>110</y>
-      <width>71</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 245, 244);</string>
-    </property>
-    <property name="placeholderText">
-     <string>1, 2 or 3</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="choose_correct_answer_lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>290</y>
-      <width>91</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(246, 245, 244);</string>
-    </property>
-    <property name="placeholderText">
-     <string>A, B, C or D</string>
     </property>
    </widget>
   </widget>
