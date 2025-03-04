@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from user import update_user_score
 
+
 class GameWindow(QWidget):
     def __init__(self, stacked_widget, theme, difficulty, user_id, questions):
         super().__init__()
@@ -50,4 +51,4 @@ class GameWindow(QWidget):
         """Handle quiz completion and update the user's score."""
         QMessageBox.information(self, "Quiz Finished", f"Your total score: {self.score}")
         update_user_score(self.user_id, self.score)
-        self.stacked_widget.setCurrentIndex(2)  # Return to logged_options_window
+        self.stacked_widget.setCurrentIndex(2)

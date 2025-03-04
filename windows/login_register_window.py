@@ -1,6 +1,7 @@
-from PySide2.QtWidgets import QWidget, QMessageBox, QLineEdit
+from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
 from user import login_user
+
 
 class LoginRegisterWindow(QWidget):
     def __init__(self, stacked_widget, main_app):

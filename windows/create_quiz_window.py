@@ -1,6 +1,5 @@
 from PySide2.QtWidgets import QWidget, QMessageBox
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtCore import Qt
 from quiz_creation import create_quiz_from_ui
 
 
@@ -26,7 +25,8 @@ class CreateQuizWindow(QWidget):
         self.ui.confirm_button.clicked.connect(self.submit_quiz)
 
         # Connect Back to Main Button
-        self.back_to_main_button = self.ui.findChild(QWidget, "back_to_main_button")
+        self.back_to_main_button = self.ui.findChild(
+            QWidget, "back_to_main_button")
         if self.back_to_main_button:
             self.back_to_main_button.clicked.connect(self.go_to_main_menu)
             print("✅ back_to_main_button connected!")

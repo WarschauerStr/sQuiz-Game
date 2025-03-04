@@ -1,5 +1,4 @@
 from db import execute_query
-from user import update_user_score
 
 
 def get_available_themes():
@@ -33,4 +32,3 @@ def get_quiz_questions(theme, difficulty):
     """
     questions = execute_query(query, (theme.lower(), difficulty), fetch=True)
     return questions
-

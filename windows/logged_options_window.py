@@ -1,6 +1,6 @@
-from PySide2.QtWidgets import QWidget, QMessageBox
+from PySide2.QtWidgets import QWidget
 from PySide2.QtUiTools import QUiLoader
-from windows.create_quiz_window import CreateQuizWindow  # Import the Create Quiz window
+
 
 class LoggedOptionsWindow(QWidget):
     def __init__(self, stacked_widget, main_app):

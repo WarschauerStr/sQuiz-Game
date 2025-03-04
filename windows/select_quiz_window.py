@@ -3,6 +3,7 @@ from PySide2.QtUiTools import QUiLoader
 from quiz import get_available_themes, get_quiz_questions
 from windows.game_window import GameWindow
 
+
 class SelectQuizWindow(QWidget):
     def __init__(self, stacked_widget, main_app):
         super().__init__()
@@ -50,7 +51,7 @@ class SelectQuizWindow(QWidget):
         questions = get_quiz_questions(selected_theme, difficulty)
         if not questions:
             QMessageBox.warning(self, "Error", "No questions found for this theme and difficulty.")
-            self.stacked_widget.setCurrentIndex(2)  # Return to logged_options_window
+            self.stacked_widget.setCurrentIndex(2)
             return
 
         # 5. Remove any old GameWindow instances
