@@ -131,6 +131,9 @@ Holds `.ui` files designed in Qt Designer. Each `.ui` file corresponds to a wind
 ### Main Menu
 ![Main Menu Screenshot](windows_screenshots/main_menu.png)
 
+### Select Quiz
+![Select Quiz Screenshot](windows_screenshots/select_quiz.png)
+
 ### Game
 ![Game Screenshot](windows_screenshots/game.png)
 
@@ -139,6 +142,3 @@ Holds `.ui` files designed in Qt Designer. Each `.ui` file corresponds to a wind
 
 ### Create Quiz
 ![Create Quiz Screenshot](windows_screenshots/create_quiz.png)
-
-### Select Quiz
-![Select Quiz Screenshot](windows_screenshots/select_quiz.png)
