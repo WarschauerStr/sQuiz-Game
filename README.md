@@ -121,14 +121,15 @@ Holds `.ui` files designed in Qt Designer. Each `.ui` file corresponds to a wind
 
 ## Screenshots
 
-### Main Menu
-![Main Menu Screenshot](windows_screenshots/main_menu.png)
 
 ### Login
 ![Login Screenshot](windows_screenshots/login.png)
 
 ### Registration
 ![Registration Screenshot](windows_screenshots/registration.png)
+
+### Main Menu
+![Main Menu Screenshot](windows_screenshots/main_menu.png)
 
 ### Game
 ![Game Screenshot](windows_screenshots/game.png)
