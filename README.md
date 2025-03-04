@@ -118,9 +118,26 @@ Holds `.ui` files designed in Qt Designer. Each `.ui` file corresponds to a wind
 - **Threading:** Python's built-in threading library is used to execute database operations asynchronously.
 - **Regular Expressions (Regex):** Used for input validation to ensure data integrity.
 
-## How to Run the App
 
-1. **Install Dependencies:**  
-   Use the command below to install required packages:
-   ```bash
-   pip install -r requirements.txt
+## Screenshots
+
+### Main Menu
+![Main Menu Screenshot](windows_screenshots/main_menu.png)
+
+### Login
+![Login Screenshot](windows_screenshots/login.png)
+
+### Registration
+![Registration Screenshot](windows_screenshots/registration.png)
+
+### Game
+![Game Screenshot](windows_screenshots/game.png)
+
+### Leaderboard
+![Leaderboard Screenshot](windows_screenshots/leaderboard.png)
+
+### Create Quiz
+![Create Quiz Screenshot](windows_screenshots/create_quiz.png)
+
+### Select Quiz
+![Select Quiz Screenshot](windows_screenshots/select_quiz.png)
