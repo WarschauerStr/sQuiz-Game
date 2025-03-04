@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>register_window</class>
+ <widget class="QDialog" name="register_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>351</width>
+    <height>360</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>register_window</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>321</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(222, 221, 218);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="enter_your_data_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Enter your data:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="register_button">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>270</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(51, 209, 122);</string>
+    </property>
+    <property name="text">
+     <string>Register</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="login_button">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>300</y>
+      <width>271</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(98, 160, 234);</string>
+    </property>
+    <property name="text">
+     <string>Already have an account? Login</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fullname_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Fullname (First Last)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="email_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>Email</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="password_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="username_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 245, 244);</string>
+    </property>
+    <property name="placeholderText">
+     <string>Username</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

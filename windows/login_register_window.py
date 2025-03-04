@@ -1,7 +1,6 @@
-from PySide2.QtWidgets import QWidget, QMessageBox
+from PySide2.QtWidgets import QWidget, QMessageBox, QLineEdit
 from PySide2.QtUiTools import QUiLoader
 from user import login_user
-
 
 class LoginRegisterWindow(QWidget):
     def __init__(self, stacked_widget, main_app):
@@ -11,17 +10,21 @@ class LoginRegisterWindow(QWidget):
         loader = QUiLoader()
         self.ui = loader.load("ui/login_register_window.ui")
 
+        # If you haven't set Echo mode in Qt Designer, do it in code:
+        # self.ui.password_lineEdit.setEchoMode(QLineEdit.Password)
+
         # Connect buttons
         self.ui.login_button.clicked.connect(self.handle_login)
         self.ui.register_button.clicked.connect(self.go_to_register)
 
     def handle_login(self):
-        username = self.ui.username_plain_text.toPlainText().strip()
-        password = self.ui.password_plain_text.toPlainText().strip()
+        # Retrieve text from the line edits
+        username = self.ui.username_lineEdit.text().strip()
+        password = self.ui.password_lineEdit.text().strip()
 
         user = login_user(username, password)
         if user:
-            user_id = user[0]  # Extract user_id from database
+            user_id = user[0]  # Extract user_id from database result
             self.main_app.current_user_id = user_id  # Store user_id in main app
             QMessageBox.information(self, "Success", f"Welcome, {user[2]}!")
             self.stacked_widget.setCurrentIndex(2)  # Move to logged_options_window

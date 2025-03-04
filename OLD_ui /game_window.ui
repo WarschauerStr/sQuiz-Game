@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>game_window</class>
+ <widget class="QDialog" name="game_window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>game_window</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>621</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgb(222, 221, 218);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="question_label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>551</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(245, 194, 17);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>&quot;Question&quot;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="question_label_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>370</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(246, 211, 45);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+    </property>
+    <property name="text">
+     <string>Chose the right answer:</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>150</y>
+      <width>551</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="1">
+      <widget class="QLabel" name="answer_D_label">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(143, 240, 164);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>&quot;Answer D&quot;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="answer_A_label">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(143, 240, 164);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>&quot;Answer A&quot;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="answer_C_label">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(143, 240, 164);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>&quot;Answer C&quot;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="answer_B_label">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(143, 240, 164);
+border: 3px solid rgb(0, 0, 0);
+border-radius: 10px;
+</string>
+       </property>
+       <property name="text">
+        <string>&quot;Answer B&quot;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>410</y>
+      <width>501</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="A_button">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(98, 160, 234);</string>
+       </property>
+       <property name="text">
+        <string>A</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="B_button">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(98, 160, 234);</string>
+       </property>
+       <property name="text">
+        <string>B</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="C_button">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(98, 160, 234);</string>
+       </property>
+       <property name="text">
+        <string>C</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="D_button">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(98, 160, 234);</string>
+       </property>
+       <property name="text">
+        <string>D</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -11,107 +11,107 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>select_quiz_window</string>
+   <string>Select Quiz</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QDialog {
+        background-color: #f0f0f3;
+        border-radius: 20px;
+    }
+    QFrame#frame {
+        background-color: #e0e0e0;
+        border-radius: 15px;
+        border: 1px solid #b0b0b0;
+    }
+    QLabel#text_label, QLabel#text_label_2 {
+        background-color: #62a0ea;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        color: white;
+    }
+    QLabel#text_label_3 {
+        background-color: #f5c211;
+        border: 1px solid #b0b0b0;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+    QComboBox {
+        background-color: #33d17a;
+        border: none;
+        border-radius: 10px;
+        padding: 6px;
+        font-size: 14px;
+    }
+    QPushButton#start_quiz_button {
+        background-color: #33d17a;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    QPushButton#start_quiz_button:hover {
+        background-color: #2dbf6d;
+    }
+   </string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>621</width>
-     <height>461</height>
+     <x>60</x>
+     <y>40</y>
+     <width>520</width>
+     <height>400</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color:rgb(222, 221, 218);
-border: 3px solid rgb(0, 0, 0);
-border-radius: 10px;
-</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPushButton" name="start_quiz_button">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>420</y>
-      <width>530</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(51, 209, 122);</string>
-    </property>
-    <property name="text">
-     <string>Start Quiz</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="text_label">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>20</y>
-      <width>530</width>
-      <height>41</height>
+      <x>20</x>
+      <y>130</y>
+      <width>230</width>
+      <height>40</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);
-border: 3px solid rgb(0, 0, 0);
-border-radius: 10px;
-</string>
-    </property>
     <property name="text">
-     <string>                                                  Choose quiz theme to play!</string>
+     <string>Choose quiz theme to play:</string>
     </property>
    </widget>
    <widget class="QComboBox" name="select_quiz_comboBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>80</y>
-      <width>171</width>
-      <height>25</height>
+      <x>50</x>
+      <y>190</y>
+      <width>170</width>
+      <height>40</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(51, 209, 122);</string>
     </property>
    </widget>
    <widget class="QLabel" name="text_label_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>200</y>
-      <width>530</width>
-      <height>41</height>
+      <x>270</x>
+      <y>130</y>
+      <width>230</width>
+      <height>40</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);
-border: 3px solid rgb(0, 0, 0);
-border-radius: 10px;
-</string>
-    </property>
     <property name="text">
-     <string>                                                          Choose difficulty!</string>
+     <string>         Choose difficulty:</string>
     </property>
    </widget>
    <widget class="QComboBox" name="choose_difficulty_comboBox">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>260</y>
-      <width>171</width>
-      <height>25</height>
+      <x>300</x>
+      <y>190</y>
+      <width>170</width>
+      <height>40</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(51, 209, 122);</string>
     </property>
     <item>
      <property name="text">
@@ -128,6 +128,32 @@ border-radius: 10px;
       <string>3</string>
      </property>
     </item>
+   </widget>
+   <widget class="QPushButton" name="start_quiz_button">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>480</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Quiz</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="text_label_3">
+    <property name="geometry">
+     <rect>
+      <x>105</x>
+      <y>30</y>
+      <width>310</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Here you can choose whatever you want!</string>
+    </property>
    </widget>
   </widget>
  </widget>

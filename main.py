@@ -55,11 +55,9 @@ class MainApp:
         print(f"SelectQuizWindow index: {self.stacked_widget.indexOf(self.select_quiz_window.ui)}")
 
     def adjust_window_size(self):
-        """Automatically adjust the window size based on screen resolution."""
+        width = 640
+        height = 480
         screen = QDesktopWidget().screenGeometry()
-        width = int(screen.width() * 0.4)  # 60% of screen width
-        height = int(screen.height() * 0.5)  # 70% of screen height
-
         self.stacked_widget.setGeometry(
             (screen.width() - width) // 2,  # Center horizontally
             (screen.height() - height) // 2,  # Center vertically
